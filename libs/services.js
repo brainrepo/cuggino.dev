@@ -15,3 +15,10 @@ export function getSortedServicesData() {
   });
   return allServicesData.sort((a, b) => (a.date < b.date)?1:-1);
 }
+
+export function getServiceData(slug) {
+  const data = getSortedServicesData();
+  const service = data.filter(e => e.slug === slug);
+
+  return service[0] || null;
+}

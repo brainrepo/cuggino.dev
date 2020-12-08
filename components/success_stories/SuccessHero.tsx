@@ -25,7 +25,7 @@ const SuccessHero = ({ successStories }) => {
           miocugginocloud, miocuggino dev e le mio cugino metologies?
         </div>
         <div className="mt-12">
-          <Button text="Raccontacela ora" mode="secondary" />
+          <Button text="Raccontacela ora" mode="secondary" href="/" />
         </div>
         
       </div>

@@ -14,14 +14,6 @@ const Slug = () => {
         <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         Post: <span>{slug}</span>
       </p>
-      <style jsx>{`
-      p {
-        span{
-          color: blue;
-        }
-        color: red;
-      }
-      `}</style>
     </>
   );
 };

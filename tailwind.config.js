@@ -1,5 +1,6 @@
-const defaultTheme = require("tailwindcss/defaultTheme")
-const colors = require('tailwindcss/colors')
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: [
@@ -16,13 +17,26 @@ module.exports = {
       colors: {
         gray: colors.blueGray,
       },
-      backgroundImage: theme => ({
-        'dark-cross-pattern': "url('/images/dark-cross-pattern.png')"
-       })
-    }
+      backgroundImage: (theme) => ({
+        "dark-cross-pattern": "url('/images/dark-cross-pattern.png')",
+      }),
+    },
+    typography: (theme) =>  ({
+      DEFAULT: {
+        css: {
+          h2: {
+            fontFamily: "\"montserrat\"" + ", " + defaultTheme.fontFamily.sans.join(', '),
+            fontWeight: 'bold',
+            color: theme('colors.red.700'),
+            paddingTop: '1.5em',
+            paddingBottom: '1.5em',
+          },
+        },
+      },
+    }),
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

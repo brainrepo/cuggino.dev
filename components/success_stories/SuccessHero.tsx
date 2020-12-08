@@ -16,6 +16,7 @@ const SuccessHero = ({ successStories }) => {
             title={story.title}
             subtitle={story.subtitle}
             logo={story.logo}
+            key={story.slug}
           />
         ))}
       </div>

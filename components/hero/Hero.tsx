@@ -7,7 +7,7 @@ const Hero = () => {
         <span className="text-gray-500"> costo di due pizze </span> con{" "}
         <span className="text-red-700"> cuggino.dev </span>
       </div>
-      <div className="md:w-7/12 px-6 md:p-0">
+      <div className="md:w-7/12 px-6 md:p-0 order-first md:order-last">
         <img src="/images/computer.png" alt="cloud computer image" />
       </div>
     </div>

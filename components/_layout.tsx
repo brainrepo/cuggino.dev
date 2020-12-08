@@ -8,7 +8,7 @@ export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({ children }) {
   return (
-    <>
+    <main className="min-h-screen flex flex-col justify-between">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="og:title" content={siteTitle} />
@@ -17,6 +17,6 @@ export default function Layout({ children }) {
       <Header />
       <main>{children}</main>
       <Footer></Footer>
-    </>
+    </main>
   );
 }

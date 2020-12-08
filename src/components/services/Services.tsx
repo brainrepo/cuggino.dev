@@ -1,5 +1,6 @@
 import Title from "../common/Title";
 import Service from "./Service";
+import Link from "next/link"
 
 const Services = ({ services }) => {
   return (
@@ -15,7 +16,10 @@ const Services = ({ services }) => {
         </div>
         <div className="md:w-6/12 grid gap-8 lg:grid-cols-2 p-5 md:p-0">
           {services?.map((s: {title:string, short:string, slug:string}) => (
-            <Service title={s.title} short={s.short} key={s.slug} />
+            <Link href={`/services/${s.slug}`} key={s.slug} ><a>
+              <Service title={s.title} short={s.short}/>
+              </a>
+            </Link>
           ))}
         </div>
       </div>

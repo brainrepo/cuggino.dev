@@ -20,20 +20,7 @@ module.exports = {
       backgroundImage: (theme) => ({
         "dark-cross-pattern": "url('/images/dark-cross-pattern.png')",
       }),
-    },
-    typography: (theme) =>  ({
-      DEFAULT: {
-        css: {
-          h2: {
-            fontFamily: "\"montserrat\"" + ", " + defaultTheme.fontFamily.sans.join(', '),
-            fontWeight: 'bold',
-            color: theme('colors.red.700'),
-            paddingTop: '1.5em',
-            paddingBottom: '1.5em',
-          },
-        },
-      },
-    }),
+    }
   },
   variants: {
     extend: {},

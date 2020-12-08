@@ -2,8 +2,9 @@ import Head from "next/head";
 import Layout from "../components/_layout";
 import Hero from "../components/hero/Hero";
 import Services from "../components/services/Services";
-import { getSortedServicesData } from "../libs/services";
-import { getData } from "../libs/successStories";
+
+import  {getDocuments} from '../services/markdownSource';
+
 import SuccessHero from "../components/success_stories/SuccessHero";
 
 export default function Home({ services, successStories }) {
@@ -23,12 +24,10 @@ export default function Home({ services, successStories }) {
 }
 
 export async function getStaticProps() {
-  const services = getSortedServicesData();
-  const successStories = getData();
   return {
     props: {
-      services,
-      successStories
+      services: getDocuments('contents/services'),
+      successStories: getDocuments('contents/success_stories')
     },
   };
 }

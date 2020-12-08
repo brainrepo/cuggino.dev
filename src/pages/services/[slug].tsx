@@ -1,10 +1,14 @@
 import Head from "next/head";
 import PageHero from "../../components/hero/PageHero";
 import Layout from "../../components/_layout";
-import { getSortedServicesData } from "../../libs/services";
-import { getServiceData } from "../../libs/services";
+import renderToString from "next-mdx-remote/render-to-string";
+import hydrate from "next-mdx-remote/hydrate";
+import components from "../../components/common/MDComponents";
+import  {getDocuments, getDocument} from '../../services/markdownSource';
 
 const Page = ({ postData }) => {
+  const content = hydrate(postData.content, { components });
+
   return (
     <Layout>
       <Head>
@@ -13,7 +17,9 @@ const Page = ({ postData }) => {
       </Head>
       <div className="container mx-auto xl:max-w-screen-xl">
         <PageHero title={postData.title} subtitle={postData.subtitle} />
-        <div className="px-8 md:px-0 prose prose-sm lg:prose-base  lg:max-w-screen-md py-2 md:py-16 mx-auto"></div>
+        <div
+          className="px-8 md:px-0 prose prose-sm prose-red lg:prose-base  lg:max-w-screen-md py-2 md:py-16 mx-auto"
+  >{content}</div>
       </div>
     </Layout>
   );
@@ -22,7 +28,7 @@ const Page = ({ postData }) => {
 export default Page;
 
 export async function getStaticPaths() {
-  const paths = getSortedServicesData();
+  const paths = getDocuments('contents/services');
   return {
     paths: paths.map((doc) => ({ params: { slug: doc.slug } })),
     fallback: false,
@@ -30,10 +36,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const postData = getServiceData(params.slug);
+  const postData = getDocument('contents/services', params.slug);
+  const mdxSource = await renderToString(postData.content, { components });
   return {
     props: {
-      postData,
+      postData: { ...postData, content: mdxSource },
     },
   };
 }

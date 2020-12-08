@@ -14,8 +14,8 @@ const Services = ({ services }) => {
           />
         </div>
         <div className="md:w-6/12 grid gap-8 lg:grid-cols-2 p-5 md:p-0">
-          {services?.map((s: {title:string, short:string, id:string}) => (
-            <Service title={s.title} short={s.short} key={s.id} />
+          {services?.map((s: {title:string, short:string, slug:string}) => (
+            <Service title={s.title} short={s.short} key={s.slug} />
           ))}
         </div>
       </div>

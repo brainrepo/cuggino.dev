@@ -5,8 +5,8 @@ const { fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
   purge: [
     // Use *.tsx if using TypeScript
-    "./pages/**/*.tsx",
-    "./components/**/*.tsx",
+    "./src/pages/**/*.tsx",
+    "./src/components/**/*.tsx",
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {

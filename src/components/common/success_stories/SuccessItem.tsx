@@ -1,14 +1,15 @@
 import Image from "next/image";
 
-const SuccessItem = ({ title, subtitle, logo }) => {
+const SuccessItem = ({ title, subtitle, image }) => {
   return (
     <div className="bg-gray-300 flex flex-col justify-between">
      
-      <div className="w-full relative py-5 px-8">
-          <Image src={logo} alt={title} 
+      <div className="w-full relative p-3">
+          <Image src={image} alt={title} 
           layout="responsive"
           height="150"
           width="300"
+          className="object-cover"
           />
       </div>
       

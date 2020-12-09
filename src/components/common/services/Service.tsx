@@ -1,4 +1,9 @@
-const Service = ({ title, short }) => {
+interface ServiceProps {
+  title: string;
+  short: string;
+}
+
+const Service: React.FC<ServiceProps> = ({ title, short }) => {
   return (
     <li className="pl-6 relative block">
       <h3 className="text-red-500 font-logo font-bold mb-1">{title}</h3>

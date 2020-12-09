@@ -1,4 +1,4 @@
-const Footer = () => {
+const Footer:React.FC = () => {
     return <footer className="bg-gray-900">
         <div className="px-6 md:px-0 container mx-auto xl:max-w-screen-xl">
             <nav className="py-8 border-b border-gray-700">
@@ -18,7 +18,7 @@ const Footer = () => {
                 </ul>
             </nav>
             <div className="p-8 md:px-0 text-gray-200 text-xs text-center md:text-left">
-            © 2021 Cuggino.dev™ All rights reserved
+            © { new Date().getFullYear() } Cuggino.dev™ All rights reserved
             </div>
         </div>
     </footer>

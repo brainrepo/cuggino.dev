@@ -11,7 +11,7 @@ const Img = ({ src }) => (
     height="350"
     alt="Picture of the author"
     layout="responsive"
-    className="object-contain -ml-3 -mr-3"
+    className="object-contain "
   />
 );
 

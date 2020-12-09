@@ -1,6 +1,7 @@
-import Button from "../common/Button";
-import Title from "../common/Title";
+import Button from "../Button";
+import Title from "../Title";
 import SuccessItem from "./SuccessItem";
+import Link from "next/link";
 
 const SuccessHero = ({ successStories }) => {
   return (
@@ -12,12 +13,16 @@ const SuccessHero = ({ successStories }) => {
       />
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 p-6 md:p-0">
         {successStories.map((story) => (
-          <SuccessItem
-            title={story.title}
-            subtitle={story.subtitle}
-            logo={story.logo}
-            key={story.slug}
-          />
+          <Link href={`/success-stories/${story.slug}`} key={story.slug}>
+            <a>
+              <SuccessItem
+                title={story.title}
+                subtitle={story.subtitle}
+                image={story.image}
+                key={story.slug}
+              />
+            </a>
+          </Link>
         ))}
       </div>
       <div className="text-center text-gray-800 text-sm py-16">
@@ -28,9 +33,7 @@ const SuccessHero = ({ successStories }) => {
         <div className="mt-12">
           <Button text="Raccontacela ora" mode="secondary" href="/" />
         </div>
-        
       </div>
-
     </div>
   );
 };

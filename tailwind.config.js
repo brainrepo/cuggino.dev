@@ -19,6 +19,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         "dark-cross-pattern": "url('/images/dark-cross-pattern.png')",
+        "white-cross-pattern": "url('/images/white-cross-pattern.png')",
       }),
     }
   },

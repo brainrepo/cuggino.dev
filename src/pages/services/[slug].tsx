@@ -7,8 +7,12 @@ import {
   getStaticPaths as getPages,
   getStaticProps as getPageProps,
 } from "../../services/markdownSource";
+import IService from "../../models/service";
 
-const Page = ({ postData }) => {
+interface PageProps {
+  postData: IService
+}
+const Page:React.FC<PageProps> = ({ postData }) => {
   const content = hydrate(postData.content, { components });
 
   return (

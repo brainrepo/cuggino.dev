@@ -34,7 +34,7 @@ type fn = (s: string) => string;
 
 //-------------------------------------
 //
-// Function to get Markdown document List and MarkdownDocuments
+// Next JS internal function related to Page Component
 //
 // Usage: 
 //

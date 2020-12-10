@@ -7,7 +7,7 @@ import {
   getStaticPaths as getPages,
   getStaticProps as getPageProps,
 } from "../../services/markdownSource";
-import IService from "../../models/service";
+import IService from "../../models/Service";
 
 interface PageProps {
   postData: IService
